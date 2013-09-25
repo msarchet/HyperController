@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeRouting", "AttributeRouting\AttributeRouting.csproj", "{42B37087-B426-4683-B92B-F500FA18E797}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeRouting.Tests", "AttributeRouting.Tests\AttributeRouting.Tests.csproj", "{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{09B519F1-40D6-4A71-A18F-DFAD2098FBD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42B37087-B426-4683-B92B-F500FA18E797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B37087-B426-4683-B92B-F500FA18E797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B37087-B426-4683-B92B-F500FA18E797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B37087-B426-4683-B92B-F500FA18E797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
