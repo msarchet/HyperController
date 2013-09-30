@@ -1,77 +1,48 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AttributeRouting.Interfaces;
-using AttributeRouting.Repositories;
 
 namespace AttributeRouting.Controllers
 {
-    public class HyperController<TEntity, TRepo, TEntityId> : ApiController
+    public class HyperController<TEntity, TRepo, TEntityId> : BaseHyperController<TEntity, TRepo, TEntityId>
         where TRepo : IRepository<TEntity, TEntityId>
         where TEntity : class, IEntity<TEntityId>
     {
-        private readonly TRepo repo;
 
-        public HyperController(TRepo repo)
+        public HyperController(TRepo repo) : base(repo)
         {
-            this.repo = repo;
         }
 
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        [HttpGet("")]
+        public HttpResponseMessage Get()
         {
-            return Get(request, () => repo.List());
+            return BaseRequestMethod(() => repo.List());
         }
 
-        public HttpResponseMessage Get(HttpRequestMessage request, TEntityId id)
+        [HttpGet("{id}")]
+        public HttpResponseMessage Get(TEntityId id)
         {
-            return Get(request, () => repo.GetById(id));
+            return BaseRequestMethod(() => repo.GetById(id));
         }
 
-        private static HttpResponseMessage Get<T>(HttpRequestMessage request, Func<RepositoryActionResult<T>> func)
+        [HttpPut("{id}")]
+        public HttpResponseMessage Put(TEntity entity)
         {
-            var result = func.Invoke();
-
-            return result.ToHttpResponseMessage(request, HttpStatusCode.OK, HttpStatusCode.NotFound);
+            return BaseRequestMethod(() => repo.Update(entity), HttpStatusCode.OK, HttpStatusCode.InternalServerError);
         }
 
-        public HttpResponseMessage Put(HttpRequestMessage request, TEntity entity)
+        [HttpPost("")]
+        public HttpResponseMessage Post(TEntity entity)
         {
-            var result = repo.Update(entity);
-
-            return result.ToGenericHttpResponseMessage(request);
+            return BaseRequestMethod(() => repo.Add(entity), HttpStatusCode.Created, HttpStatusCode.InternalServerError);
         }
 
-        public HttpResponseMessage Post(HttpRequestMessage request, TEntity entity)
+        [HttpDelete("{id}")]
+        public HttpResponseMessage Delete(TEntityId id)
         {
-            var result = repo.Add(entity);
-
-            return result.ToGenericHttpResponseMessage(request);
-        }
-
-        public HttpResponseMessage Delete(HttpRequestMessage request, TEntityId id)
-        {
-            var result = repo.Remove(id);
-
-            return result.ToGenericHttpResponseMessage(request);
+            return BaseRequestMethod(() => repo.Remove(id), HttpStatusCode.NoContent, HttpStatusCode.InternalServerError);
         }
     }
-
-    public static class RepositoryActionResultExteionsion
-    {
-        public static HttpResponseMessage ToGenericHttpResponseMessage<T>(this RepositoryActionResult<T> result, HttpRequestMessage request)
-        {
-            return result.ToHttpResponseMessage(request, HttpStatusCode.OK, HttpStatusCode.InternalServerError);
-        }
-
-        public static HttpResponseMessage ToHttpResponseMessage<T>(this RepositoryActionResult<T> result, HttpRequestMessage request, HttpStatusCode successCode, HttpStatusCode failureCode)
-        {
-            if (result.IsSuccessful)
-            {
-                return request.CreateResponse(successCode, result.Result);
-            }
-
-            return request.CreateErrorResponse(failureCode, result.Message);
-        }
-    }
+    
 }
