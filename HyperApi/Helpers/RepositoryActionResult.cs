@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AttributeRouting.Repositories
+namespace HyperApi.Helpers
 {
     /// <summary>
     /// A container from handling Repository Actions

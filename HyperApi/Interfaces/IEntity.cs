@@ -1,4 +1,4 @@
-﻿namespace AttributeRouting.Interfaces
+﻿namespace HyperApi.Interfaces
 {
     public interface IEntity<TEntityId>
     {

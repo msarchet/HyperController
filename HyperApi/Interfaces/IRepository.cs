@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AttributeRouting.Repositories;
+﻿using System.Collections.Generic;
+using HyperApi.Helpers;
 
-namespace AttributeRouting.Interfaces
+namespace HyperApi.Interfaces
 {
     public interface IRepository<T, in TEntityId> where T : IEntity<TEntityId>
     {

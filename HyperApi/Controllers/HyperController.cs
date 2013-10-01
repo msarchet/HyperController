@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using AttributeRouting.Interfaces;
+using HyperApi.Interfaces;
 
-namespace AttributeRouting.Controllers
+namespace HyperApi.Controllers
 {
     public class HyperController<TEntity, TRepo, TEntityId> : BaseHyperController<TEntity, TRepo, TEntityId>
         where TRepo : IRepository<TEntity, TEntityId>

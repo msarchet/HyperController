@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using AttributeRouting.Controllers;
-using AttributeRouting.Interfaces;
+﻿using System.ComponentModel.DataAnnotations;
+using HyperApi.Interfaces;
 
 namespace AttributeRouting.Models
 {

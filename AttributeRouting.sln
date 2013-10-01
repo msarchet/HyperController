@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeRouting.Tests", "A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{09B519F1-40D6-4A71-A18F-DFAD2098FBD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperApi", "HyperApi\HyperApi.csproj", "{111264D9-6870-40D7-84B1-9B08D360FE1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B96B582A-8BD5-48C1-9239-5981BEE2AB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111264D9-6870-40D7-84B1-9B08D360FE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111264D9-6870-40D7-84B1-9B08D360FE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111264D9-6870-40D7-84B1-9B08D360FE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111264D9-6870-40D7-84B1-9B08D360FE1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

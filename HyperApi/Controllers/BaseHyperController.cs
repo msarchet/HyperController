@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
-using AttributeRouting.Interfaces;
-using AttributeRouting.Repositories;
-using Microsoft.Ajax.Utilities;
+using HyperApi.Helpers;
+using HyperApi.Interfaces;
 
-namespace AttributeRouting.Controllers
+namespace HyperApi.Controllers
 {
     public class BaseHyperController<TEntity, TRepo, TEntityId> : ApiController
         where TRepo : IRepository<TEntity, TEntityId>
@@ -32,7 +28,7 @@ namespace AttributeRouting.Controllers
         {
             var result = action.Invoke();
 
-            return result.ToHttpResponseMessage(base.Request, success, failed);
+            return result.ToHttpResponseMessage(Request, success, failed);
         }
     }
 

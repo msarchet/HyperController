@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AttributeRouting.Interfaces;
+using HyperApi.Helpers;
+using HyperApi.Interfaces;
 
 namespace AttributeRouting.Repositories
 {
